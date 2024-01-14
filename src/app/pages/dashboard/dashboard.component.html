@@ -1,7 +1,6 @@
 <app-navbar></app-navbar>
-<div class="container" style="height: auto;">
+<div class="container" style="height: auto; margin-bottom: 20px;">
     <h2>Gestión de usuarios</h2>
-
     <div class="row">
         <div class="col-md-4">
             <div class="input-group mb-3">
@@ -12,7 +11,7 @@
             </div>
         </div>
         <div class="col-md-8 text-right">
-            <button class="btn btn-primary">Agregar</button>
+            <button class="btn btn-primary" (click)="openModal()">Agregar</button>
         </div>
     </div>
 
@@ -65,6 +64,41 @@
         </div>
     </div>
 </div>
-<!-- END: abpxx6d04wxr -->
+
+<!-- Modal New User Form -->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="newUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newUserModalLabel">Agregar nuevo usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your form fields here -->
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Rol</label>
+                        <input type="text" class="form-control" id="role" placeholder="Rol">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 

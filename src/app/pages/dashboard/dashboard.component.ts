@@ -29,5 +29,9 @@ export class DashboardComponent {
       }
     });
   }
+  openModal() {
+    // open newUserModal
+    
+  }
 
 }
