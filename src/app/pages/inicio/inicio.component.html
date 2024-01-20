@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group mb-3">
+          <input type="text" [(ngModel)]="searchInput" class="form-control" placeholder="Buscar platillo por nombre">
+          <select [(ngModel)]="selectedCategory" class="form-select">
+            <option>Busca por categorías</option>
+            <option *ngFor="let category of categories">{{ category.strCategory }}</option>
+          </select>
+          <button (click)="searchMeals()" class="btn btn-primary">Buscar</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngIf="meals.length > 0">
+                <div class="row">
+                    <div *ngFor="let meal of meals" class="col-md-6">
+                        <div class="card mb-3">
+                            <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ meal.strMeal }}</h3>
+                                <p class="card-text">Categoría: {{ selectedCategory }}</p>
+                                <a [routerLink]="['/detail', meal.idMeal]" class="btn btn-primary">Ver detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  

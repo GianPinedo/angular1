@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { LoginService } from 'src/app/services/auth/login.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
+import { ModalContentComponent } from 'src/app/modal-content/modal-content.component';
+//import { ModalContentComponent } from './modal-content/modal-content.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +12,7 @@ import { LoginService } from 'src/app/services/auth/login.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  bsModalRef!: BsModalRef; 
   users: any[] = [
     { name: 'Usuario 1', email: 'usuario1@example.com', role: 'Rol 1' },
     { name: 'Usuario 2', email: 'usuario2@example.com', role: 'Rol 2' },
@@ -21,7 +27,7 @@ export class DashboardComponent {
   ];
   userLoggedIn: boolean = false;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private modalService: BsModalService ) { }
   ngOnInit() {
    this.loginService.isUserLoggedIn.subscribe({
       next: response => {
@@ -30,8 +36,11 @@ export class DashboardComponent {
     });
   }
   openModal() {
-    // open newUserModal
-    
+    this.bsModalRef = this.modalService.show(ModalContentComponent);
+  }
+
+  closeModal() {
+    this.bsModalRef.hide();
   }
 
 }
