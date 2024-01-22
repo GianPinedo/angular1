@@ -26,4 +26,4 @@ Para obtener más ayuda sobre Angular CLI, utiliza `ng help` o visita la página
 
 Puedes acceder al deploy de la aplicación en AWS a través del siguiente enlace:
 
-- [AWS Deployment](https://d37etzz9ybf7on.cloudfront.net/index)
+- [AWS Deployment](https://d37etzz9ybf7on.cloudfront.net/index.html)
