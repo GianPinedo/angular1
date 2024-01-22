@@ -7,7 +7,12 @@
             <option>Busca por categorías</option>
             <option *ngFor="let category of categories">{{ category.strCategory }}</option>
           </select>
-          <button (click)="searchMeals()" class="btn btn-primary">Buscar</button>
+          <button (click)="searchMeals()" class="btn btn-primary">
+            
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+              <span *ngIf="!isLoading">Buscar</span>
+          </button>
+          
         </div>
       </div>
     </div>

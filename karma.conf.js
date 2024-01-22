@@ -8,7 +8,7 @@ module.exports = function (config) {
         require('@angular-devkit/build-angular/plugins/karma')
       ],
       client: {
-        clearContext: false // deja Jasmine manejar la toma de decisiones al limpiar el contexto en cada prueba
+        clearContext: false 
       },
       coverageIstanbulReporter: {
         dir: require('path').join(__dirname, './coverage/angular1'),

@@ -13,6 +13,7 @@ export class IndexComponent implements OnInit {
   selectedCategory: string = 'Busca por categorías';
   searchInput: any;
   selectedCategoryName: string = '';
+  isLoading: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -24,11 +25,14 @@ export class IndexComponent implements OnInit {
   }
 
   searchMeals(): void {
+    this.isLoading = true;
     const apiBaseUrl = environment.apiBaseUrl;
     let param = this.selectedCategory === 'Busca por categorías' ? this.searchInput : this.selectedCategory;
-    let endpoint = `${apiBaseUrl}${this.selectedCategory === 'Busca por categorías' ? 'search.php?s=' : 'filter.php?c='}`+param;
+    let endpoint = `${apiBaseUrl}${this.selectedCategory === 'Busca por categorías' ? 'search.php?s=' : 'filter.php?c='}` + param;
     this.http.get(endpoint).subscribe((data: any) => {
       this.meals = data.meals;
+      this.isLoading = false; 
     });
   }
+  
 }
