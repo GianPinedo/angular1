@@ -4,19 +4,14 @@
   </button>
   <div *ngIf="mealDetails">
     <div class="row">
-      <!-- Columna para el título y otros datos -->
       <div class="col-md-6">
         <h2>{{ mealDetails.strMeal }}</h2>
         <p><strong>Categoría:</strong> {{ mealDetails.strCategory }}</p>
         <p><strong>Área (país) de origen:</strong> {{ mealDetails.strArea }}</p>
-
-        <!-- Ingredientes y medidas -->
         <h4>Ingredientes:</h4>
         <ul>
           <li *ngFor="let item of getIngredientesYMedidas()">{{ item.strIngredient }} - {{ item.strMeasure }}</li>
         </ul>
-
-        <!-- Video de YouTube -->
         <h4 class="">Video de preparación:</h4>
         <div class="mb-3">
           <a [href]="mealDetails.strYoutube" target="_blank">
@@ -24,8 +19,6 @@
           </a>
         </div>
       </div>
-
-      <!-- Columna para la imagen -->
       <div class="col-md-6">
         <div class="text-center">
           <img [src]="mealDetails.strMealThumb" alt="{{ mealDetails.strMeal }}" class="img-fluid mb-3 rounded">
@@ -35,8 +28,6 @@
         </div>
       </div>
     </div>
-    
-    <!-- Instrucciones de preparación que ocupan todo el ancho -->
     <div class="row">
       <div class="col-md-12">
         <h4>Instrucciones de preparación:</h4>

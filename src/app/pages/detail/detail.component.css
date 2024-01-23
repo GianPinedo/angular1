@@ -1,75 +1,114 @@
 /* Estilos para la página de detalle */
 /* Estilos para el botón "Volver" */
+/* Estilo para el botón de volver */
 .btn-link {
-    text-decoration: none;
-    color: #007bff; /* Cambia el color del enlace según tu preferencia */
-    font-size: 16px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-  }
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem; /* Tamaño de fuente */
+  margin-bottom: 1rem; /* Espaciado inferior para separarlo del contenido */
+}
+
+.btn-link i {
+  margin-right: 0.5rem; /* Espaciado entre el icono y el texto */
+}
+
+.btn-link:hover {
+  /* No hay subrayado en el estado hover */
+}
+
   
-  .btn-link:hover {
-    text-decoration: underline;
-    color: #0056b3; /* Cambia el color al pasar el mouse según tu preferencia */
-  }
-  
+/* Estilo general para el contenedor principal */
 .container {
-    padding: 20px;
-  }
-  
-  /* Estilos para la imagen */
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Estilos para el fondo del tag */
-  .bg-primary {
-    background-color: #007bff; /* Cambia el color de fondo según tu preferencia */
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: bold;
-  }
-  
-  /* Estilos para los encabezados */
-  h2, h4 {
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  /* Estilos para las listas */
-  ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 20px;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  /* Estilos para el enlace de YouTube */
-  a {
-    text-decoration: none;
-    color: #007bff; /* Cambia el color del enlace según tu preferencia */
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Estilos para el botón "Volver" */
-  .btn-link {
-    text-decoration: none;
-    color: #007bff; /* Cambia el color del enlace según tu preferencia */
-  }
-  
-  .btn-link:hover {
-    text-decoration: underline;
-  }
-  
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el botón de volver */
+.btn-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para el título */
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Estilo para los datos de categoría y área */
+strong {
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Estilo para la lista de ingredientes */
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+li {
+  margin: 0.2rem 0;
+}
+
+/* Estilo para el enlace al video de YouTube */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para la imagen */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el contenedor de tags */
+.bg-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Estilo para las instrucciones de preparación */
+h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1.5rem;
+}
+
+/* Estilo para el texto de instrucciones */
+p {
+  font-size: 1rem;
+  color: #444;
+}
