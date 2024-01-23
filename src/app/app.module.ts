@@ -44,6 +44,7 @@ import { HistoryComponent } from './pages/history/history.component';
       {path: 'inicio', component: DashboardComponent },
       {path: 'login', component: LoginComponent },
       {path: 'index', component: IndexComponent },
+      {path: 'index/:search', component: IndexComponent },
       {path: 'detail/:id', component: DetailComponent },
       {path: 'history', component: HistoryComponent }
     ]),

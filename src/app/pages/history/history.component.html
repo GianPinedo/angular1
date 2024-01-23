@@ -1,9 +1,11 @@
 <div class="container mt-4">
-    <h2>Historial de Búsquedas</h2>
-    <ul>
-      <li *ngFor="let searchQuery of searchHistory">
-        <a (click)="redirectToSearch(searchQuery)">{{ searchQuery }}</a>
-      </li>
-    </ul>
-  </div>
-  
+  <h2>Historial de Búsquedas</h2>
+  <ul class="list-group">
+    <li *ngFor="let searchQuery of searchHistory" class="list-group-item">
+      <a [routerLink]="['/index',searchQuery]" class="btn btn-primary btn-sm">{{ searchQuery }}</a>
+    </li>
+  </ul>
+
+  <!-- Botón para limpiar el historial -->
+  <button class="btn btn-danger mt-3" (click)="clearSearchHistory()">Limpiar Historial</button>
+</div>

@@ -13,7 +13,9 @@
                 <i class="fa fa-search"></i>
               </span>
           </button>
-          
+          <button  class="btn btn-success" [routerLink]="['/history']">
+              <i class="fa fa-clock-o"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -26,12 +28,10 @@
                             <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="card-img-top">
                             <div class="card-body">
                                 <h3 class="card-title">{{ meal.strMeal }}</h3>
-                                <p class="card-text">Categoría: {{ selectedCategory }}</p>
                                 <a [routerLink]="['/detail', meal.idMeal]" class="btn btn-primary">Ver detalle</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Mensaje en caso no encontrar resultados-->
                 </div>
             </div>
             <div *ngIf="noData" class="col-md-12">

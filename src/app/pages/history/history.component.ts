@@ -21,4 +21,9 @@ export class HistoryComponent implements OnInit {
   redirectToSearch(query: string): void {
     console.log(query);
   }
+  
+  clearSearchHistory(): void {
+    this.searchHistoryService.clearHistory();
+    this.loadSearchHistory(); 
+  }
 }

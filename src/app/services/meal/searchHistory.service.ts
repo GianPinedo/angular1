@@ -6,10 +6,16 @@ import { Injectable } from '@angular/core';
 export class SearchHistoryService {
   private history: string[] = [];
 
-  constructor() { }
+  constructor() {
+    const storedHistory = localStorage.getItem('searchHistory');
+    if (storedHistory) {
+      this.history = JSON.parse(storedHistory);
+    }
+  }
 
   addSearch(query: string): void {
-    this.history.unshift(query); 
+    this.history.unshift(query);
+    this.saveHistoryToLocalStorage(); 
   }
 
   getHistory(): string[] {
@@ -18,6 +24,10 @@ export class SearchHistoryService {
 
   clearHistory(): void {
     this.history = [];
+    localStorage.removeItem('searchHistory'); 
   }
- 
+
+  private saveHistoryToLocalStorage(): void {
+    localStorage.setItem('searchHistory', JSON.stringify(this.history)); 
+  }
 }

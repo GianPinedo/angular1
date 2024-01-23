@@ -9,10 +9,10 @@ import { BrowserModule } from "@angular/platform-browser";
 import { HistoryComponent } from "./pages/history/history.component";
 
 const routes: Routes = [
-    {path: '', redirectTo: '/inicio', pathMatch: 'full' },
-    {path: 'inicio', component: DashboardComponent },
+    {path: '', redirectTo: '/inicio/:search', pathMatch: 'full' },
+    {path: 'inicio/:search', component: DashboardComponent },
     {path: 'login', component: LoginComponent },
-    {path: 'index', component: IndexComponent },
+    {path: 'index/:search', component: IndexComponent },
     {path: 'detail/:id', component: DetailComponent },
     {path: 'history', component: HistoryComponent }
 ];
