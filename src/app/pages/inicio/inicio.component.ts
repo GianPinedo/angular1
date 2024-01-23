@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/app/environment';
+import { MealService } from 'src/app/services/meal/meal.service';
 
 @Component({
   selector: 'app-index',
@@ -15,21 +16,22 @@ export class IndexComponent implements OnInit {
   selectedCategoryName: string = '';
   isLoading: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private mealService: MealService ) { }
 
   ngOnInit(): void {
-    const apiBaseUrl = environment.apiBaseUrl;
-    this.http.get(`${apiBaseUrl}categories.php`).subscribe((data: any) => {
+    this.loadCategories(); 
+  }
+
+  loadCategories(): void {
+    this.mealService.getCategories().subscribe((data: any) => {
       this.categories = data.categories;
     });
   }
 
   searchMeals(): void {
     this.isLoading = true;
-    const apiBaseUrl = environment.apiBaseUrl;
-    let param = this.selectedCategory === 'Busca por categorías' ? this.searchInput : this.selectedCategory;
-    let endpoint = `${apiBaseUrl}${this.selectedCategory === 'Busca por categorías' ? 'search.php?s=' : 'filter.php?c='}` + param;
-    this.http.get(endpoint).subscribe((data: any) => {
+    const category = this.selectedCategory === 'Busca por categorías' ? this.searchInput : this.selectedCategory;
+    this.mealService.getMealList(category).subscribe((data: any) => {
       this.meals = data.meals;
       this.isLoading = false; 
     });

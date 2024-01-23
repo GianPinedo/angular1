@@ -1,0 +1,75 @@
+/* Estilos para la página de detalle */
+/* Estilos para el botón "Volver" */
+.btn-link {
+    text-decoration: none;
+    color: #007bff; /* Cambia el color del enlace según tu preferencia */
+    font-size: 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Cambia el color al pasar el mouse según tu preferencia */
+  }
+  
+.container {
+    padding: 20px;
+  }
+  
+  /* Estilos para la imagen */
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para el fondo del tag */
+  .bg-primary {
+    background-color: #007bff; /* Cambia el color de fondo según tu preferencia */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los encabezados */
+  h2, h4 {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para las listas */
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para el enlace de YouTube */
+  a {
+    text-decoration: none;
+    color: #007bff; /* Cambia el color del enlace según tu preferencia */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos para el botón "Volver" */
+  .btn-link {
+    text-decoration: none;
+    color: #007bff; /* Cambia el color del enlace según tu preferencia */
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline;
+  }
+  

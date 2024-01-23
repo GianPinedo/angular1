@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { environment } from 'src/app/environment';
+
 import { Location } from '@angular/common';
+import { MealService } from 'src/app/services/meal/meal.service';
 
 @Component({
   selector: 'app-detail',
@@ -14,24 +13,25 @@ export class DetailComponent implements OnInit {
   mealId: any;
   mealDetails: any;
 
+
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient,
-    private sanitizer: DomSanitizer,
-    private location: Location
-  ) { }
+    private location: Location,
+    private mealService: MealService 
+  ) { 
+    
+  }
 
   ngOnInit(): void {
-    const apiBaseUrl = environment.apiBaseUrl;
     this.route.params.subscribe(params => {
       this.mealId = params['id'];
-      this.http.get(`${apiBaseUrl}lookup.php?i=` + this.mealId)
+      this.mealService.getMealDetails(this.mealId)
         .subscribe((data: any) => {
           this.mealDetails = data.meals[0];
         });
     });
   }
-
+  
   getIngredientesYMedidas(): { strIngredient: string, strMeasure: string }[] {
     const ingredientesYMedidas = [];
 
