@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/app/environment';
 import { MealService } from 'src/app/services/meal/meal.service';
+import { SearchHistoryService } from 'src/app/services/meal/searchHistory.service';
 
 @Component({
   selector: 'app-index',
@@ -13,10 +12,10 @@ export class IndexComponent implements OnInit {
   meals: any[] = [];
   selectedCategory: string = 'Busca por categorías';
   searchInput: any;
-  selectedCategoryName: string = '';
   isLoading: boolean = false;
+  noData: boolean = false;
 
-  constructor(private http: HttpClient, private mealService: MealService ) { }
+  constructor(private mealService: MealService, private searchHistoryService: SearchHistoryService ) { }
 
   ngOnInit(): void {
     this.loadCategories(); 
@@ -30,10 +29,23 @@ export class IndexComponent implements OnInit {
 
   searchMeals(): void {
     this.isLoading = true;
-    const category = this.selectedCategory === 'Busca por categorías' ? this.searchInput : this.selectedCategory;
-    this.mealService.getMealList(category).subscribe((data: any) => {
+    const option = this.selectedCategory === 'Busca por categorías' ? 'search' : 'category';
+    const param = this.selectedCategory === 'Busca por categorías' ? this.searchInput : this.selectedCategory;
+    if (option === 'search') {
+      this.searchHistoryService.addSearch(param);
+    }else{
+      this.searchInput = '';
+    }
+    this.mealService.getMealList(option,param).subscribe((data: any) => {
+      if (data.meals === null) {
+        this.meals = [];
+        this.noData = true;
+        this.isLoading = false;
+        return;
+      }
+      this.noData = false;
       this.meals = data.meals;
-      this.isLoading = false; 
+      this.isLoading = false;
     });
   }
   

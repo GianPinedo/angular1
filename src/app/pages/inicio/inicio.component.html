@@ -9,7 +9,9 @@
           </select>
           <button (click)="searchMeals()" class="btn btn-primary">
               <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"></span>
-              <span *ngIf="!isLoading">Buscar</span>
+              <span *ngIf="!isLoading">
+                <i class="fa fa-search"></i>
+              </span>
           </button>
           
         </div>
@@ -29,8 +31,14 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Mensaje en caso no encontrar resultados-->
                 </div>
             </div>
+            <div *ngIf="noData" class="col-md-12">
+              <div class="alert alert-danger" role="alert">
+                  No se encontraron resultados
+              </div>
+          </div>
         </div>
     </div>
   </div>

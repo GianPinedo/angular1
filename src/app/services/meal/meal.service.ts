@@ -11,16 +11,19 @@ export class MealService {
 
   constructor(private http: HttpClient) { }
 
+  // servicio para obtener las categorías
   getCategories(): Observable<any[]> {
     const endpoint = `${this.apiBaseUrl}categories.php`;
     return this.http.get<any[]>(endpoint);
   }
 
-  getMealList(category: string): Observable<any[]> {
-    const endpoint = category === 'Busca por categorías' ? `${this.apiBaseUrl}search.php?s=` : `${this.apiBaseUrl}filter.php?c=`;
-    return this.http.get<any[]>(`${endpoint}${category}`);
+  // servicio para obtener la lista de comidas
+  getMealList(option: string, param: string): Observable<any[]> {
+    const endpoint = option === 'search' ? `${this.apiBaseUrl}search.php?s=` : `${this.apiBaseUrl}filter.php?c=`;
+    return this.http.get<any[]>(`${endpoint}${param}`);
   }
 
+  // servicio para obtener el detalle de una comida
   getMealDetails(mealId: string): Observable<any> {
     return this.http.get(`${this.apiBaseUrl}lookup.php?i=${mealId}`);
   }

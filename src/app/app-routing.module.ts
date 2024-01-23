@@ -6,7 +6,7 @@ import { IndexComponent } from "./pages/inicio/inicio.component";
 import { DetailComponent } from "./pages/detail/detail.component";
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from "@angular/platform-browser";
-
+import { HistoryComponent } from "./pages/history/history.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -14,6 +14,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent },
     {path: 'index', component: IndexComponent },
     {path: 'detail/:id', component: DetailComponent },
+    {path: 'history', component: HistoryComponent }
 ];
 
 @NgModule({

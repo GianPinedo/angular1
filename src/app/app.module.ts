@@ -15,6 +15,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { IndexComponent } from './pages/inicio/inicio.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DetailComponent } from './pages/detail/detail.component';
     ModalContentComponent,
     IndexComponent,
     DetailComponent,
+    HistoryComponent,
    
   ],
   imports: [
@@ -43,6 +45,7 @@ import { DetailComponent } from './pages/detail/detail.component';
       {path: 'login', component: LoginComponent },
       {path: 'index', component: IndexComponent },
       {path: 'detail/:id', component: DetailComponent },
+      {path: 'history', component: HistoryComponent }
     ]),
     
   ],

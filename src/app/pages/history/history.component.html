@@ -1,0 +1,9 @@
+<div class="container mt-4">
+    <h2>Historial de Búsquedas</h2>
+    <ul>
+      <li *ngFor="let searchQuery of searchHistory">
+        <a (click)="redirectToSearch(searchQuery)">{{ searchQuery }}</a>
+      </li>
+    </ul>
+  </div>
+  

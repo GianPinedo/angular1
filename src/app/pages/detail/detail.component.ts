@@ -12,16 +12,12 @@ import { MealService } from 'src/app/services/meal/meal.service';
 export class DetailComponent implements OnInit {
   mealId: any;
   mealDetails: any;
-
-
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private mealService: MealService 
-  ) { 
-    
-  }
-
+  ) { }
+  
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.mealId = params['id'];
