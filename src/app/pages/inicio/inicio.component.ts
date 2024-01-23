@@ -24,13 +24,12 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCategories();
-      this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.searchInput = params['search'];
-     }
-    );
-    if (this.searchInput) {
-      this.searchMeals();
-    }
+      if (this.searchInput) {
+        this.searchMeals();
+      }
+    });
   }
 
   loadCategories(): void {
