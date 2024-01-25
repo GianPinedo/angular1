@@ -28,6 +28,7 @@ export class DetailComponent implements OnInit {
     });
   }
   
+  
   getIngredientesYMedidas(): { strIngredient: string, strMeasure: string }[] {
     const ingredientesYMedidas = [];
 
